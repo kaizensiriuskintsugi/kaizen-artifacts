@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaizen Artifacts — Test</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: #e0e0e0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            text-align: center;
+            padding: 3rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            max-width: 600px;
+        }
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(90deg, #e94560, #ff6b6b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .subtitle {
+            color: #888;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+        }
+        .status {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 20px;
+            background: rgba(76, 175, 80, 0.15);
+            border: 1px solid rgba(76, 175, 80, 0.3);
+            border-radius: 24px;
+            color: #4caf50;
+            font-weight: 500;
+            margin-bottom: 2rem;
+        }
+        .status::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: #4caf50;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+        .info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        .info-card {
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+        .info-card .label {
+            font-size: 0.75rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .info-card .value {
+            font-size: 1.1rem;
+            margin-top: 4px;
+            color: #ccc;
+        }
+        .timestamp {
+            margin-top: 2rem;
+            font-size: 0.8rem;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Kaizen Artifacts</h1>
+        <p class="subtitle">Interactive Artifact Hosting for Kaizen OS</p>
+        <div class="status">GitHub Pages Active</div>
+        <p>This test artifact verifies that GitHub Pages is properly configured and serving interactive HTML content that can be embedded in Notion via <code>/embed</code> blocks.</p>
+        <div class="info">
+            <div class="info-card">
+                <div class="label">Repo</div>
+                <div class="value">kaizen-artifacts</div>
+            </div>
+            <div class="info-card">
+                <div class="label">Hosting</div>
+                <div class="value">GitHub Pages</div>
+            </div>
+            <div class="info-card">
+                <div class="label">Embed</div>
+                <div class="value">Notion /embed</div>
+            </div>
+            <div class="info-card">
+                <div class="label">Auto-Deploy</div>
+                <div class="value">On Push</div>
+            </div>
+        </div>
+        <p class="timestamp">Deployed: <span id="ts"></span></p>
+    </div>
+    <script>
+        document.getElementById('ts').textContent = new Date().toLocaleDateString('en-US', {
+            year: 'numeric', month: 'long', day: 'numeric',
+            hour: '2-digit', minute: '2-digit'
+        });
+    </script>
+</body>
+</html>
