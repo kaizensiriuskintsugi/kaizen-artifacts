@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>LBP Brand Crystallization — v1 mark studies + palette directions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Nunito+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --abyss:#0a0a0f; --underdark:#23126d; --faerie:#9b1bca; --depths:#229383;
+    --gold:#b8860b; --glow:#f8f4e8;
+    --raised:#12121a; --veil:#191048;
+    --faerie-bright:#c26ae8; --depths-bright:#2fd4bd;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--abyss);color:var(--glow);font-family:'Nunito Sans',system-ui,sans-serif;width:1440px;margin:0 auto;padding:56px 64px 40px}
+  h1,h2,h3,.display{font-family:'Cinzel',Georgia,serif}
+  h1{font-size:40px;font-weight:700;letter-spacing:.02em}
+  .sub{color:#b9b2a4;font-size:15px;margin-top:10px;max-width:900px;line-height:1.5}
+  .tagline{color:#8f8878;font-size:13px;margin-top:6px;font-style:italic}
+  section{margin-top:56px}
+  h2{font-size:24px;font-weight:500;color:var(--glow);border-bottom:1px solid #23232e;padding-bottom:10px;margin-bottom:24px}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .tile{background:var(--raised);border:1px solid #20202b;border-radius:14px;padding:24px;position:relative}
+  .tile .stage{background:var(--abyss);border-radius:10px;height:240px;display:flex;align-items:center;justify-content:center}
+  .tile h3{font-size:17px;margin-top:16px;letter-spacing:.03em}
+  .tile p{font-size:13px;line-height:1.5;color:#b9b2a4;margin-top:6px}
+  .tags{margin-top:10px;display:flex;gap:6px;flex-wrap:wrap}
+  .tag{font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:99px;border:1px solid #33333f;color:#9d968a}
+  .tag.evolve{border-color:var(--depths);color:var(--depths-bright)}
+  .tag.replace{border-color:var(--faerie);color:var(--faerie-bright)}
+  .tag.gold{border-color:var(--gold);color:#d9a52f}
+  .mini{position:absolute;top:20px;right:20px;width:26px;height:26px;opacity:.9}
+  .mini svg{width:100%;height:100%}
+  .minilbl{position:absolute;top:48px;right:14px;font-size:8.5px;color:#6b6558;letter-spacing:.04em}
+  /* palette rows */
+  .dir{background:var(--raised);border:1px solid #20202b;border-radius:14px;padding:28px;margin-bottom:24px}
+  .dir h3{font-size:18px;letter-spacing:.03em}
+  .dir .note{font-size:13px;color:#b9b2a4;margin-top:6px;max-width:860px;line-height:1.5}
+  .swatches{display:flex;gap:10px;margin-top:18px}
+  .sw{flex:1;height:86px;border-radius:8px;border:1px solid #23232e;position:relative;overflow:hidden}
+  .sw span{position:absolute;left:10px;bottom:8px;font-size:11px;font-weight:600;letter-spacing:.02em}
+  .demo{margin-top:18px;background:var(--abyss);border-radius:10px;padding:22px 26px;display:flex;align-items:center;gap:28px}
+  .demo .dh{font-family:'Cinzel',Georgia,serif;font-size:20px}
+  .demo .db{font-size:13px;color:#cfc8ba;max-width:340px;line-height:1.45}
+  .demo a{font-size:13px;font-weight:700;text-decoration:underline}
+  .btn{font-size:13px;font-weight:700;padding:10px 20px;border-radius:8px;display:inline-block}
+  .chip{font-size:11px;padding:4px 10px;border-radius:99px;border:1px solid}
+  /* type strip */
+  .typebox{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .typecell{background:var(--raised);border:1px solid #20202b;border-radius:14px;padding:28px}
+  .typecell .big{font-size:34px;line-height:1.2}
+  .typecell .body{margin-top:14px;font-size:14px;line-height:1.6;color:#cfc8ba}
+  .cap{font-size:11px;color:#6b6558;margin-top:14px;letter-spacing:.05em;text-transform:uppercase}
+  footer{margin-top:56px;border-top:1px solid #23232e;padding-top:18px;font-size:12px;color:#8f8878;line-height:1.6}
+  .goldline{color:#d9a52f}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>LBP BRAND CRYSTALLIZATION — v1</h1>
+  <div class="sub"><b>What this set explores:</b> six mark directions probing three live questions — lineage (evolve the tree-in-frame V4 vs replace), whether the kintsugi seam lives in the mark itself, and which archetype leads (lighthouse · star · weave · lantern) — plus three dark-first palette directions. Sketch fidelity is deliberate: pick directions, not final art.</div>
+  <div class="tagline">Nothing here is ratified until it's in DECISIONS.md. Vault is truth. · Generated with Claude · 2026-08-12</div>
+</header>
+
+<section>
+  <h2>A · Mark Studies</h2>
+  <div class="grid">
+
+    <div class="tile">
+      <div class="stage">
+        <svg width="180" height="180" viewBox="0 0 100 100">
+          <defs><radialGradient id="g1" cx="50%" cy="42%" r="45%">
+            <stop offset="0%" stop-color="#f8f4e8" stop-opacity=".95"/><stop offset="55%" stop-color="#f8f4e8" stop-opacity=".18"/><stop offset="100%" stop-color="#f8f4e8" stop-opacity="0"/>
+          </radialGradient></defs>
+          <path d="M30 88 H16 V12 H84 V88 H70" fill="none" stroke="#f8f4e8" stroke-width="5" stroke-linecap="round"/>
+          <circle cx="50" cy="42" r="30" fill="url(#g1)"/>
+          <circle cx="50" cy="42" r="7" fill="#f8f4e8"/>
+          <path d="M43 55 L34 92 M57 55 L66 92" stroke="#f8f4e8" stroke-width="3" stroke-linecap="round" opacity=".55"/>
+        </svg>
+      </div>
+      <div class="mini"><svg viewBox="0 0 100 100"><path d="M30 88 H16 V12 H84 V88 H70" fill="none" stroke="#f8f4e8" stroke-width="7"/><circle cx="50" cy="42" r="9" fill="#f8f4e8"/></svg></div>
+      <div class="minilbl">favicon test</div>
+      <h3>M1 · LANTERN FRAME</h3>
+      <p>The name made literal: a box that light escapes from. Frame opens at the base — the light spills out to the people. Works line-weight-only at small sizes.</p>
+      <div class="tags"><span class="tag replace">replace</span><span class="tag">lantern / campfire</span></div>
+    </div>
+
+    <div class="tile">
+      <div class="stage">
+        <svg width="180" height="180" viewBox="0 0 100 100">
+          <defs><linearGradient id="g2" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#f8f4e8" stop-opacity=".9"/><stop offset="100%" stop-color="#f8f4e8" stop-opacity="0"/>
+          </linearGradient></defs>
+          <circle cx="50" cy="50" r="40" fill="none" stroke="#f8f4e8" stroke-width="4"/>
+          <path d="M38 66 L44 30 H56 L62 66 Z" fill="#f8f4e8"/>
+          <rect x="35" y="66" width="30" height="5" rx="2.5" fill="#f8f4e8"/>
+          <path d="M50 26 L88 8 L86 26 Z" fill="url(#g2)"/>
+          <circle cx="50" cy="24" r="4.5" fill="#f8f4e8"/>
+        </svg>
+      </div>
+      <div class="mini"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="#f8f4e8" stroke-width="7"/><path d="M38 68 L45 28 H55 L62 68 Z" fill="#f8f4e8"/></svg></div>
+      <div class="minilbl">favicon test</div>
+      <h3>M2 · BEACON</h3>
+      <p>The lighthouse archetype, reduced to tower + thrown beam inside a fixed circle — "shines from a fixed, named position." Beam angle is the variable to play with.</p>
+      <div class="tags"><span class="tag replace">replace</span><span class="tag">lighthouse</span></div>
+    </div>
+
+    <div class="tile">
+      <div class="stage">
+        <svg width="180" height="180" viewBox="0 0 100 100">
+          <defs><linearGradient id="g3" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#d9a52f"/><stop offset="100%" stop-color="#b8860b"/>
+          </linearGradient></defs>
+          <rect x="14" y="14" width="72" height="72" rx="12" fill="#16161f" stroke="#f8f4e8" stroke-width="2.5"/>
+          <path d="M46 14 L52 34 L42 48 L56 62 L47 78 L53 86" fill="none" stroke="#f8f4e8" stroke-width="7" opacity=".28" stroke-linecap="round"/>
+          <path d="M46 14 L52 34 L42 48 L56 62 L47 78 L53 86" fill="none" stroke="url(#g3)" stroke-width="2.8" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="mini"><svg viewBox="0 0 100 100"><rect x="14" y="14" width="72" height="72" rx="14" fill="none" stroke="#f8f4e8" stroke-width="6"/><path d="M46 14 L52 36 L42 50 L56 64 L50 86" fill="none" stroke="#b8860b" stroke-width="5"/></svg></div>
+      <div class="minilbl">favicon test</div>
+      <h3>M3 · KINTSUGI SEAM</h3>
+      <p>The box, broken and mended — one gold seam with warm light leaking through it. Tests Q2 head-on: gold IN the mark. Doctrine check: the crack, never the material.</p>
+      <div class="tags"><span class="tag replace">replace</span><span class="tag gold">gold seam</span></div>
+    </div>
+
+    <div class="tile">
+      <div class="stage">
+        <svg width="180" height="180" viewBox="0 0 100 100">
+          <defs><linearGradient id="g4" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#9b1bca"/><stop offset="100%" stop-color="#229383"/>
+          </linearGradient></defs>
+          <g stroke="#f8f4e8" stroke-width="4" stroke-linecap="round" opacity=".85">
+            <path d="M20 32 H44 M56 32 H80"/>
+            <path d="M20 68 H32 M44 68 H68 M80 68 H80"/>
+            <path d="M32 20 V44 M32 56 V80"/>
+            <path d="M68 20 V32 M68 44 V80"/>
+          </g>
+          <path d="M20 50 H60 M72 50 H80" stroke="url(#g4)" stroke-width="4" stroke-linecap="round"/>
+          <path d="M50 20 V36 M50 62 V80" stroke="#f8f4e8" stroke-width="4" stroke-linecap="round" opacity=".85"/>
+        </svg>
+      </div>
+      <div class="mini"><svg viewBox="0 0 100 100"><g stroke="#f8f4e8" stroke-width="6"><path d="M20 33 H80 M20 67 H80"/><path d="M33 20 V80 M67 20 V80"/></g></svg></div>
+      <div class="minilbl">favicon test</div>
+      <h3>M4 · THE WEAVE</h3>
+      <p>Interlaced strands, over-under, with one spectrum strand running through. Ships the Weave as pure art — the meaning system stays internal per firewall. Reads as textile + circuit.</p>
+      <div class="tags"><span class="tag replace">replace</span><span class="tag">weave / spectrum</span></div>
+    </div>
+
+    <div class="tile">
+      <div class="stage">
+        <svg width="180" height="180" viewBox="0 0 100 100">
+          <circle cx="50" cy="50" r="38" fill="none" stroke="#f8f4e8" stroke-width="1.4" opacity=".35"/>
+          <g stroke="#f8f4e8" stroke-width="1.2" opacity=".22">
+            <path d="M50 12 V88 M17 31 L83 69 M17 69 L83 31"/>
+          </g>
+          <path d="M50 18 L56 44 L82 50 L56 56 L50 82 L44 56 L18 50 L44 44 Z" fill="#f8f4e8"/>
+          <path d="M50 82 L47 96 L53 96 Z" fill="#f8f4e8" opacity=".6"/>
+        </svg>
+      </div>
+      <div class="mini"><svg viewBox="0 0 100 100"><path d="M50 10 L58 42 L90 50 L58 58 L50 90 L42 58 L10 50 L42 42 Z" fill="#f8f4e8"/></svg></div>
+      <div class="minilbl">favicon test</div>
+      <h3>M5 · SIRIUS WAYFINDER</h3>
+      <p>The navigation star over a faint six-spoke wheel (the statements' geometry, present but unexplained). One point drops longer — star becomes beam. Ties to Wayfinder product naming.</p>
+      <div class="tags"><span class="tag replace">replace</span><span class="tag">star / wheel</span></div>
+    </div>
+
+    <div class="tile">
+      <div class="stage">
+        <svg width="180" height="180" viewBox="0 0 100 100">
+          <rect x="14" y="14" width="72" height="72" rx="10" fill="none" stroke="#f8f4e8" stroke-width="3.5"/>
+          <g fill="#f8f4e8">
+            <path d="M50 24 L64 44 H36 Z"/>
+            <path d="M50 38 L68 60 H32 Z" opacity=".8"/>
+            <path d="M50 54 L72 76 H28 Z" opacity=".6"/>
+          </g>
+          <rect x="47" y="66" width="6" height="14" fill="#f8f4e8"/>
+          <path d="M30 86 Q50 78 70 86" fill="none" stroke="#b8860b" stroke-width="2.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="mini"><svg viewBox="0 0 100 100"><rect x="14" y="14" width="72" height="72" rx="12" fill="none" stroke="#f8f4e8" stroke-width="6"/><path d="M50 24 L70 58 H30 Z M47 58 H53 V78 H47 Z" fill="#f8f4e8"/></svg></div>
+      <div class="minilbl">favicon test</div>
+      <h3>M6 · TREE, TEMPERED</h3>
+      <p>The continuity option: tree-in-frame V4 lineage, rebuilt — canopy as three stacked light-cones, one gold root-seam beneath. Evolution, not replacement; keeps existing equity.</p>
+      <div class="tags"><span class="tag evolve">evolve V4</span><span class="tag gold">gold root</span></div>
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <h2>B · Dark-First Palette Directions</h2>
+
+  <div class="dir">
+    <h3>P1 · CANONICAL SIX — AS-IS</h3>
+    <div class="note">The locked brand-style palette, unchanged, applied honestly. Known tension it exposes: Faerie Fire as <i>text</i> on Abyss sits near 3:1 — fine as accent/large display, fails body-text contrast. Ratifying P1 means magenta stays decorative.</div>
+    <div class="swatches">
+      <div class="sw" style="background:#0a0a0f"><span style="color:#f8f4e8">Abyss 0a0a0f</span></div>
+      <div class="sw" style="background:#23126d"><span style="color:#f8f4e8">Underdark 23126d</span></div>
+      <div class="sw" style="background:#9b1bca"><span style="color:#f8f4e8">Faerie Fire 9b1bca</span></div>
+      <div class="sw" style="background:#229383"><span style="color:#0a0a0f">Glowing Depths 229383</span></div>
+      <div class="sw" style="background:#b8860b"><span style="color:#0a0a0f">Dark Gold b8860b</span></div>
+      <div class="sw" style="background:#f8f4e8"><span style="color:#0a0a0f">Warm Glow f8f4e8</span></div>
+    </div>
+    <div class="demo">
+      <div class="dh">Light a nervous<br>system can trust</div>
+      <div class="db">Body text in Warm Glow on Abyss. The studio reports lived findings — gaps published next to wins.</div>
+      <a style="color:#229383">Explore installations</a>
+      <span class="btn" style="background:#229383;color:#0a0a0f">Book a walkthrough</span>
+      <span class="chip" style="border-color:#9b1bca;color:#9b1bca">Faerie Fire accent</span>
+      <span class="chip" style="border-color:#b8860b;color:#b8860b">gold moment</span>
+    </div>
+  </div>
+
+  <div class="dir">
+    <h3>P2 · CONTRAST-TUNED ADDITIONS</h3>
+    <div class="note">Canon untouched; four working tones added for real UI: two raised dark surfaces (Abyss Raised, Underdark Veil) and two text-safe accents (Faerie Bright, Depths Bright) so magenta/teal can speak at body size and pass WCAG on Abyss. Additions, never replacements.</div>
+    <div class="swatches">
+      <div class="sw" style="background:#12121a"><span style="color:#f8f4e8">+ Raised 12121a</span></div>
+      <div class="sw" style="background:#191048"><span style="color:#f8f4e8">+ Veil 191048</span></div>
+      <div class="sw" style="background:#c26ae8"><span style="color:#0a0a0f">+ Faerie Bright c26ae8</span></div>
+      <div class="sw" style="background:#2fd4bd"><span style="color:#0a0a0f">+ Depths Bright 2fd4bd</span></div>
+      <div class="sw" style="background:#9b1bca"><span style="color:#f8f4e8">canon 9b1bca</span></div>
+      <div class="sw" style="background:#229383"><span style="color:#0a0a0f">canon 229383</span></div>
+    </div>
+    <div class="demo" style="background:#12121a">
+      <div class="dh">Light a nervous<br>system can trust</div>
+      <div class="db">Card sits on Raised; page stays Abyss. Interactive text uses the bright pair; canon hues keep fills and glows.</div>
+      <a style="color:#2fd4bd">Explore installations</a>
+      <span class="btn" style="background:#229383;color:#0a0a0f">Book a walkthrough</span>
+      <span class="chip" style="border-color:#c26ae8;color:#c26ae8">readable magenta</span>
+      <span class="chip" style="border-color:#b8860b;color:#d9a52f">gold moment</span>
+    </div>
+  </div>
+
+  <div class="dir">
+    <h3>P3 · GOLD RESTRAINT</h3>
+    <div class="note">The severe cut: Abyss + Warm Glow monochrome; Dark Gold appears only as hairline seams on premium moments; magenta/teal exist solely as interaction states (hover, focus, live light). Closest to the gallery/print voice — the work carries all the color.</div>
+    <div class="swatches">
+      <div class="sw" style="background:#0a0a0f"><span style="color:#f8f4e8">Abyss 0a0a0f</span></div>
+      <div class="sw" style="background:#12121a"><span style="color:#f8f4e8">Raised 12121a</span></div>
+      <div class="sw" style="background:#f8f4e8"><span style="color:#0a0a0f">Warm Glow f8f4e8</span></div>
+      <div class="sw" style="background:#0a0a0f;border-top:2px solid #b8860b"><span style="color:#d9a52f">gold hairline only</span></div>
+      <div class="sw" style="background:#0a0a0f"><span style="color:#229383">teal = hover only</span></div>
+      <div class="sw" style="background:#0a0a0f"><span style="color:#9b1bca">magenta = live only</span></div>
+    </div>
+    <div class="demo" style="border-top:1px solid #b8860b">
+      <div class="dh">Light a nervous<br>system can trust</div>
+      <div class="db">Everything Warm Glow on dark. The gold hairline above is the only ornament this direction permits itself.</div>
+      <a style="color:#f8f4e8">Explore installations</a>
+      <span class="btn" style="background:#f8f4e8;color:#0a0a0f">Book a walkthrough</span>
+      <span class="chip" style="border-color:#33333f;color:#9d968a">accents on interaction</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>C · Type Reference (applied pair)</h2>
+  <div class="typebox">
+    <div class="typecell">
+      <div class="big display">LIGHTBOX PROJECT</div>
+      <div class="body">Cinzel — the applied display face (Shopify today). Ideal per canon: Beaufort Pro Bold. Q5 on the board decides whether the Brand Book ratifies applied or ideal.</div>
+      <div class="cap">display · cinzel 500/700</div>
+    </div>
+    <div class="typecell">
+      <div class="big" style="font-family:'Nunito Sans';font-weight:700;font-size:26px">A neurodivergent lighting studio</div>
+      <div class="body">Nunito Sans — the applied body face. Ideal per canon: Halogen. This page renders the applied pair; if fonts fail to load you are seeing Georgia/system fallbacks — judge layout, not letterforms.</div>
+      <div class="cap">body · nunito sans 400/600/700</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <b>v1 — mark studies + dark-first palette directions</b> · LBP Brand Crystallization · generated with Claude · 2026-08-12<br>
+  Iteration doctrine: never overwrite an iteration — the trail is the value. Nothing is ratified until logged in <span class="goldline">DECISIONS.md</span> in the vault.<br>
+  LightBox Project · a Neurodivergent lighting studio · Mohkinstsis (Calgary), Treaty 7 territory.
+</footer>
+
+</body>
+</html>
