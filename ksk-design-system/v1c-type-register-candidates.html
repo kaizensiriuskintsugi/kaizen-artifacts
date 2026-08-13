@@ -1,0 +1,62 @@
+<!-- @dsCard group="v1 token studies — exploration, not ratified" -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>KSK v1c — type register candidates</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:#16161b; width:1100px; font-family:"Segoe UI",system-ui,Helvetica,Arial,sans-serif; color:#f0ecdf; }
+  .canvas { width:1100px; padding:48px 56px 56px; background:#16161b; }
+  .tag { font-size:12px; letter-spacing:.22em; text-transform:uppercase; color:#8b8778; }
+  h1 { font-size:30px; font-weight:600; margin:8px 0 2px; }
+  .sub { font-size:14px; color:#c2bdae; margin-bottom:12px; }
+  .warn { font-size:12px; color:#c9a227; margin-bottom:30px; }
+  .spec { background:#1d1d23; border:1px solid #30303a; padding:26px 28px; margin-bottom:26px; }
+  .spec .label { font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:#c9a227; margin-bottom:16px; }
+  .spec .display { color:#f0ecdf; }
+  .spec .body { font-size:14px; line-height:1.6; color:#c2bdae; max-width:760px; margin-top:10px; }
+  .spec .meta { margin-top:14px; font-size:12px; color:#8b8778; }
+  .a .display { font-family:Georgia,"Palatino Linotype",serif; font-size:42px; font-weight:400; letter-spacing:.005em; }
+  .a .display i { color:#c9a227; }
+  .b .display { font-family:"Segoe UI",system-ui,Helvetica,Arial,sans-serif; font-size:40px; font-weight:650; letter-spacing:-.015em; }
+  .b .display span { color:#c9a227; }
+  .c .display { font-family:Georgia,serif; font-size:42px; }
+  .c .kicker { font-family:Consolas,"Roboto Mono",monospace; font-size:13px; letter-spacing:.16em; text-transform:uppercase; color:#c9a227; margin-bottom:10px; }
+  .c .meta-mono { font-family:Consolas,"Roboto Mono",monospace; font-size:12px; color:#8b8778; margin-top:14px; }
+  .rule { margin-top:6px; font-size:12px; color:#8b8778; line-height:1.6; border-top:1px solid #30303a; padding-top:14px; }
+</style>
+</head>
+<body>
+<div class="canvas">
+  <div class="tag">KSK design system · token study · 2026-08-13</div>
+  <h1>v1c — type register candidates</h1>
+  <div class="sub">Three registers for the KSK voice on dark charcoal. The decision here is <b>register</b>, not final face — and it leans on [?q9] (KSK voice: shared Clarity/Explorer modes, or a distinct personal register?).</div>
+  <div class="warn">Faces below are proxies (system-safe). Shortlist to trial once a register wins: A → Fraunces / Cormorant Garamond · B → Inter / Space Grotesk · C accent → IBM Plex Mono. LBP uses Cinzel + Nunito Sans; C-35 says KSK owes it nothing.</div>
+
+  <div class="spec a">
+    <div class="label">Candidate A — carved serif · the storyteller</div>
+    <div class="display">Repaired with gold, told in <i>first person</i>.</div>
+    <div class="body">A literary serif carries the kintsugi register: personal, warm, unhurried. Body text stays a quiet grotesk so the serif keeps its authority for display and pull-quotes only.</div>
+    <div class="meta">display: serif 42/1.15 · body: grotesk 14/1.6 · closest LBP relative: Cinzel (too Roman for KSK?)</div>
+  </div>
+
+  <div class="spec b">
+    <div class="label">Candidate B — modern grotesk · the practitioner</div>
+    <div class="display">Systems that hold. <span>Seams that show.</span></div>
+    <div class="body">One grotesk family end to end, weight does the talking. Reads as tooling, dashboards, the working artist — the register the activation dashboard already lives in. Distinct from LBP by geometry and gold, not by face contrast.</div>
+    <div class="meta">display: grotesk 40/1.1, -1.5% tracking · body: same family 14/1.6 · lowest-risk, least myth</div>
+  </div>
+
+  <div class="spec c">
+    <div class="label">Candidate C — serif × mono · the field journal</div>
+    <div class="kicker">entry 036 — dark curiosity</div>
+    <div class="display">The lighthouse writes its own log.</div>
+    <div class="body">Serif carries the story; a mono voice carries labels, data, coordinates — the instrument-panel texture of a keeper's log. Strongest identity, highest discipline cost.</div>
+    <div class="meta-mono">display: serif 42/1.15 · labels/meta: mono 12-13, tracked wide · body: grotesk 14/1.6</div>
+  </div>
+
+  <div class="rule">CANDIDATE — not ratified. One row, one decision: which register is KSK? Face trials happen in Claude Design after the register call. Ratifications → personal-brand/_intake/ → /project-reconcile.</div>
+</div>
+</body>
+</html>

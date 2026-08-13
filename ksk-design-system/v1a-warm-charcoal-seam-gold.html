@@ -1,0 +1,104 @@
+<!-- @dsCard group="v1 token studies — exploration, not ratified" -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>KSK v1a — warm charcoal × seam gold</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:#191715; width:1100px; font-family:"Segoe UI",system-ui,Helvetica,Arial,sans-serif; color:#f2ead9; }
+  .canvas { width:1100px; padding:48px 56px 56px; background:#191715; }
+  .tag { font-size:12px; letter-spacing:.22em; text-transform:uppercase; color:#8f8674; }
+  h1 { font-size:30px; font-weight:600; margin:8px 0 2px; }
+  .sub { font-size:14px; color:#c9bda6; margin-bottom:36px; }
+  .sub b { color:#c9a227; font-weight:600; }
+  h2 { font-size:13px; letter-spacing:.18em; text-transform:uppercase; color:#c9a227; margin:36px 0 14px; }
+  .scale { display:flex; gap:0; border:1px solid #332e2b; }
+  .step { flex:1; height:120px; padding:10px; display:flex; flex-direction:column; justify-content:flex-end; }
+  .step .n { font-size:11px; color:#c9bda6; opacity:.9; }
+  .step .x { font-size:12px; font-weight:600; }
+  .roles { display:flex; gap:0; margin-top:6px; }
+  .roles div { flex:1; font-size:11px; color:#8f8674; padding:4px 10px; }
+  .goldrow { display:flex; gap:24px; }
+  .goldcell { flex:1; background:#201d1b; border:1px solid #332e2b; padding:20px; }
+  .goldcell .demo { margin-top:14px; }
+  .cap { font-size:12px; color:#c9bda6; }
+  .seamline { height:2px; background:linear-gradient(90deg,#8f7420,#c9a227 40%,#e6c34a 55%,#c9a227 70%,#8f7420); margin:16px 0 6px; }
+  .ui { display:flex; gap:24px; }
+  .card { flex:1.4; background:#201d1b; border:1px solid #332e2b; border-top:2px solid #c9a227; padding:22px; }
+  .card h3 { font-size:17px; font-weight:600; margin-bottom:6px; }
+  .card p { font-size:13px; line-height:1.55; color:#c9bda6; }
+  .card .meta { margin-top:14px; font-size:11px; color:#8f8674; letter-spacing:.08em; text-transform:uppercase; }
+  .stack { flex:1; display:flex; flex-direction:column; gap:14px; }
+  .btn { display:block; text-align:center; padding:12px 18px; font-size:14px; font-weight:600; }
+  .btn.primary { color:#c9a227; background:transparent; border:1px solid #c9a227; }
+  .btn.quiet { color:#f2ead9; background:#282422; border:1px solid #423c38; }
+  .link { font-size:14px; color:#f2ead9; }
+  .link span { border-bottom:2px solid #c9a227; padding-bottom:2px; }
+  .navrow { background:#201d1b; border:1px solid #332e2b; padding:0 18px; display:flex; gap:26px; font-size:13px; }
+  .navrow div { padding:13px 0; color:#8f8674; }
+  .navrow .on { color:#f2ead9; box-shadow:inset 0 -2px 0 #c9a227; }
+  .mood { margin-top:40px; background:#121110; border:1px solid #332e2b; padding:34px 30px; }
+  .mood .big { font-family:Georgia,"Times New Roman",serif; font-size:44px; letter-spacing:.01em; color:#f2ead9; }
+  .mood .big i { color:#c9a227; font-style:italic; }
+  .mood .cap { margin-top:10px; }
+  .rule { margin-top:28px; font-size:12px; color:#8f8674; line-height:1.6; border-top:1px solid #332e2b; padding-top:14px; }
+</style>
+</head>
+<body>
+<div class="canvas">
+  <div class="tag">KSK design system · token study · 2026-08-13</div>
+  <h1>v1a — warm charcoal × seam gold</h1>
+  <div class="sub">Thesis: charcoal carries a <b>warm brown undertone</b> (charcoal as burnt wood, campfire-adjacent); gold is <b>one value, seams only</b> — hairlines, underlines, focus. Gold never fills a surface.</div>
+
+  <h2>Charcoal scale — warm undertone</h2>
+  <div class="scale">
+    <div class="step" style="background:#121110"><span class="n">char-950</span><span class="x">#121110</span></div>
+    <div class="step" style="background:#191715"><span class="n">char-900</span><span class="x">#191715</span></div>
+    <div class="step" style="background:#201d1b"><span class="n">char-850</span><span class="x">#201d1b</span></div>
+    <div class="step" style="background:#282422"><span class="n">char-800</span><span class="x">#282422</span></div>
+    <div class="step" style="background:#332e2b"><span class="n">char-700</span><span class="x">#332e2b</span></div>
+    <div class="step" style="background:#423c38"><span class="n">char-600</span><span class="x">#423c38</span></div>
+    <div class="step" style="background:#57504b"><span class="n">char-500</span><span class="x">#57504b</span></div>
+  </div>
+  <div class="roles"><div>void / mood</div><div>app ground</div><div>card / pane</div><div>raised / input</div><div>border / rule</div><div>border-strong</div><div>disabled ink</div></div>
+
+  <h2>Gold — the seam voice (single value)</h2>
+  <div class="goldrow">
+    <div class="goldcell">
+      <div class="cap">seam-gold <b style="color:#c9a227">#c9a227</b> · dim #8f7420 · lit #e6c34a (hover/glint only)</div>
+      <div class="seamline"></div>
+      <div class="cap">the kintsugi seam — a repair line across dark surfaces</div>
+    </div>
+    <div class="goldcell">
+      <div class="cap">ink ramp on warm charcoal</div>
+      <div class="demo" style="font-size:15px; color:#f2ead9">ink-100 #f2ead9 — primary</div>
+      <div class="demo" style="font-size:15px; color:#c9bda6">ink-300 #c9bda6 — secondary</div>
+      <div class="demo" style="font-size:15px; color:#8f8674">ink-500 #8f8674 — muted / meta</div>
+    </div>
+  </div>
+
+  <h2>Proof — components wearing the tokens</h2>
+  <div class="ui">
+    <div class="card">
+      <h3>Project Alpha</h3>
+      <p>Gold enters as the seam on the broken edge — the top rule, the active underline, the focus ring. Surfaces stay charcoal; light stays in the ink.</p>
+      <div class="meta">Jane Doe · updated today</div>
+    </div>
+    <div class="stack">
+      <a class="btn primary">Ratify direction</a>
+      <a class="btn quiet">Hold for compare</a>
+      <div class="link">Continue to <span>the next study</span></div>
+    </div>
+  </div>
+  <div class="navrow" style="margin-top:24px"><div class="on">Tokens</div><div>Marks</div><div>Type</div><div>Motion</div></div>
+
+  <div class="mood">
+    <div class="big">Gold where it was <i>broken</i>. Dark where it is <i>curious</i>.</div>
+    <div class="cap">mood proof — C-36: kintsugi gold over dark charcoal · lighthouse + campfire</div>
+  </div>
+
+  <div class="rule">CANDIDATE — not ratified. C-36 names the mood, not these hexes. Compare against v1b (cool charcoal × ember ramp) in Zone 3: one row, one decision. Ratifications → personal-brand/_intake/ → /project-reconcile.</div>
+</div>
+</body>
+</html>

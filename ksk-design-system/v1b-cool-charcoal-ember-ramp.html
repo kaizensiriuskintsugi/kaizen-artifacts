@@ -1,0 +1,111 @@
+<!-- @dsCard group="v1 token studies — exploration, not ratified" -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>KSK v1b — cool charcoal × ember ramp</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:#14161b; width:1100px; font-family:"Segoe UI",system-ui,Helvetica,Arial,sans-serif; color:#ece9df; }
+  .canvas { width:1100px; padding:48px 56px 56px; background:#14161b; }
+  .tag { font-size:12px; letter-spacing:.22em; text-transform:uppercase; color:#85837a; }
+  h1 { font-size:30px; font-weight:600; margin:8px 0 2px; }
+  .sub { font-size:14px; color:#b9b6ab; margin-bottom:36px; }
+  .sub b { color:#d98e32; font-weight:600; }
+  h2 { font-size:13px; letter-spacing:.18em; text-transform:uppercase; color:#c9a227; margin:36px 0 14px; }
+  .scale { display:flex; gap:0; border:1px solid #2c3039; }
+  .step { flex:1; height:120px; padding:10px; display:flex; flex-direction:column; justify-content:flex-end; }
+  .step .n { font-size:11px; color:#b9b6ab; opacity:.9; }
+  .step .x { font-size:12px; font-weight:600; }
+  .roles { display:flex; gap:0; margin-top:6px; }
+  .roles div { flex:1; font-size:11px; color:#85837a; padding:4px 10px; }
+  .goldrow { display:flex; gap:24px; }
+  .goldcell { flex:1; background:#1a1d23; border:1px solid #2c3039; padding:20px; }
+  .cap { font-size:12px; color:#b9b6ab; }
+  .ramp { display:flex; height:56px; margin:16px 0 6px; }
+  .ramp div { flex:1; display:flex; align-items:flex-end; padding:6px 8px; font-size:11px; color:#14161b; font-weight:600; }
+  .ui { display:flex; gap:24px; }
+  .card { flex:1.4; background:#1a1d23; border:1px solid #2c3039; padding:22px; position:relative; }
+  .card .ember { position:absolute; left:0; top:0; bottom:0; width:3px; background:linear-gradient(180deg,#e6c34a,#c9a227 35%,#d98e32 70%,#cf6b29); }
+  .card h3 { font-size:17px; font-weight:600; margin-bottom:6px; }
+  .card p { font-size:13px; line-height:1.55; color:#b9b6ab; }
+  .card .meta { margin-top:14px; font-size:11px; color:#85837a; letter-spacing:.08em; text-transform:uppercase; }
+  .stack { flex:1; display:flex; flex-direction:column; gap:14px; }
+  .btn { display:block; text-align:center; padding:12px 18px; font-size:14px; font-weight:700; }
+  .btn.primary { color:#14161b; background:linear-gradient(90deg,#c9a227,#d98e32); }
+  .btn.quiet { color:#ece9df; background:#22252d; border:1px solid #3a3f4a; }
+  .link { font-size:14px; color:#ece9df; }
+  .link span { color:#d98e32; }
+  .navrow { background:#1a1d23; border:1px solid #2c3039; padding:0 18px; display:flex; gap:26px; font-size:13px; }
+  .navrow div { padding:13px 0; color:#85837a; }
+  .navrow .on { color:#ece9df; box-shadow:inset 0 -2px 0 #d98e32; }
+  .mood { margin-top:40px; background:#0e0f12; border:1px solid #2c3039; padding:34px 30px; }
+  .mood .big { font-family:Georgia,"Times New Roman",serif; font-size:44px; color:#ece9df; }
+  .mood .big i { background:linear-gradient(90deg,#e6c34a,#d98e32,#cf6b29); -webkit-background-clip:text; background-clip:text; color:transparent; font-style:italic; }
+  .mood .cap { margin-top:10px; }
+  .rule { margin-top:28px; font-size:12px; color:#85837a; line-height:1.6; border-top:1px solid #2c3039; padding-top:14px; }
+</style>
+</head>
+<body>
+<div class="canvas">
+  <div class="tag">KSK design system · token study · 2026-08-13</div>
+  <h1>v1b — cool charcoal × ember ramp</h1>
+  <div class="sub">Thesis: charcoal runs <b>cool blue-black</b> (night sky, Sirius overhead); gold is a <b>ramp — seam to ember</b> — and may fill: buttons, edges, live states. The campfire is allowed to burn, not just glint.</div>
+
+  <h2>Charcoal scale — cool undertone</h2>
+  <div class="scale">
+    <div class="step" style="background:#0e0f12"><span class="n">char-950</span><span class="x">#0e0f12</span></div>
+    <div class="step" style="background:#14161b"><span class="n">char-900</span><span class="x">#14161b</span></div>
+    <div class="step" style="background:#1a1d23"><span class="n">char-850</span><span class="x">#1a1d23</span></div>
+    <div class="step" style="background:#22252d"><span class="n">char-800</span><span class="x">#22252d</span></div>
+    <div class="step" style="background:#2c3039"><span class="n">char-700</span><span class="x">#2c3039</span></div>
+    <div class="step" style="background:#3a3f4a"><span class="n">char-600</span><span class="x">#3a3f4a</span></div>
+    <div class="step" style="background:#4d525f"><span class="n">char-500</span><span class="x">#4d525f</span></div>
+  </div>
+  <div class="roles"><div>void / mood</div><div>app ground</div><div>card / pane</div><div>raised / input</div><div>border / rule</div><div>border-strong</div><div>disabled ink</div></div>
+
+  <h2>Gold — the ember ramp (four values, fills allowed)</h2>
+  <div class="goldrow">
+    <div class="goldcell">
+      <div class="cap">glint #e6c34a → seam <b style="color:#c9a227">#c9a227</b> → amber #d98e32 → ember #cf6b29</div>
+      <div class="ramp">
+        <div style="background:#e6c34a">glint</div>
+        <div style="background:#c9a227">seam</div>
+        <div style="background:#d98e32">amber</div>
+        <div style="background:#cf6b29">ember</div>
+      </div>
+      <div class="cap">seam = identity · amber/ember = heat, action, live states</div>
+    </div>
+    <div class="goldcell">
+      <div class="cap">ink ramp on cool charcoal</div>
+      <div style="margin-top:14px; font-size:15px; color:#ece9df">ink-100 #ece9df — primary</div>
+      <div style="font-size:15px; color:#b9b6ab">ink-300 #b9b6ab — secondary</div>
+      <div style="font-size:15px; color:#85837a">ink-500 #85837a — muted / meta</div>
+    </div>
+  </div>
+
+  <h2>Proof — components wearing the tokens</h2>
+  <div class="ui">
+    <div class="card">
+      <div class="ember"></div>
+      <h3>Project Alpha</h3>
+      <p>The fire lives at the edge — a full seam-to-ember gradient marks what is alive. Filled gold is reserved for the one action that matters on the surface.</p>
+      <div class="meta">Jane Doe · updated today</div>
+    </div>
+    <div class="stack">
+      <a class="btn primary">Ratify direction</a>
+      <a class="btn quiet">Hold for compare</a>
+      <div class="link">Continue to <span>the next study</span></div>
+    </div>
+  </div>
+  <div class="navrow" style="margin-top:24px"><div class="on">Tokens</div><div>Marks</div><div>Type</div><div>Motion</div></div>
+
+  <div class="mood">
+    <div class="big">The night is cold. The <i>fire</i> is not.</div>
+    <div class="cap">mood proof — C-36: dark curiosity · lighthouse + campfire, ember reading of the same canon</div>
+  </div>
+
+  <div class="rule">CANDIDATE — not ratified. Same layout as v1a on purpose: one row, one decision (warm vs cool ground · seam-only vs ember ramp). Ratifications → personal-brand/_intake/ → /project-reconcile.</div>
+</div>
+</body>
+</html>
