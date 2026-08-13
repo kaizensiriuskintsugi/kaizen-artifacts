@@ -1,0 +1,113 @@
+<!-- @dsCard group="v2 gold studies — on ratified warm ground (R-1)" -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>KSK v2b — ember permission (one fill per surface)</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:#191715; width:1100px; font-family:"Segoe UI",system-ui,Helvetica,Arial,sans-serif; color:#f2ead9; }
+  .canvas { width:1100px; padding:48px 56px 56px; background:#191715; }
+  .tag { font-size:12px; letter-spacing:.22em; text-transform:uppercase; color:#8f8674; }
+  h1 { font-size:30px; font-weight:600; margin:8px 0 2px; }
+  .sub { font-size:14px; color:#c9bda6; margin-bottom:34px; }
+  .sub b { color:#d98e32; font-weight:600; }
+  h2 { font-size:13px; letter-spacing:.18em; text-transform:uppercase; color:#c9a227; margin:34px 0 14px; }
+  .lawrow { display:flex; gap:24px; }
+  .law { flex:1; background:#201d1b; border:1px solid #332e2b; padding:18px 20px; font-size:13px; line-height:1.55; color:#c9bda6; }
+  .law b { color:#f2ead9; }
+  .law .ok { color:#d98e32; font-weight:600; }
+  .law .seam { color:#c9a227; font-weight:600; }
+  .ramp { display:flex; height:34px; margin:14px 0; }
+  .ramp div { flex:1; display:flex; align-items:center; justify-content:center; font-size:10px; letter-spacing:.08em; text-transform:uppercase; color:#191715; font-weight:700; }
+  .dash { display:flex; background:#16130f; border:1px solid #332e2b; }
+  .rail { width:210px; background:#171411; border-right:1px solid #332e2b; padding:18px 0; }
+  .rail .brand { padding:0 18px 16px; font-size:13px; letter-spacing:.14em; text-transform:uppercase; color:#c9a227; border-bottom:1px solid #332e2b; margin-bottom:10px; }
+  .rail .item { padding:11px 18px; font-size:13px; color:#8f8674; }
+  .rail .item.on { color:#191715; font-weight:700; background:linear-gradient(90deg,#c9a227,#d98e32); }
+  .main { flex:1; padding:22px 24px 26px; }
+  .main .head { display:flex; justify-content:space-between; align-items:baseline; margin-bottom:16px; }
+  .main .head h3 { font-size:18px; font-weight:600; }
+  .main .head .live { font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:#cf6b29; }
+  .main .head .live::before { content:"●"; margin-right:6px; }
+  .stats { display:flex; gap:14px; margin-bottom:16px; }
+  .stat { flex:1; background:#201d1b; border:1px solid #332e2b; padding:14px 16px; }
+  .stat .n { font-size:24px; font-weight:600; color:#f2ead9; }
+  .stat .l { font-size:11px; color:#8f8674; text-transform:uppercase; letter-spacing:.08em; margin-top:2px; }
+  .stat .bar { height:4px; background:#332e2b; margin-top:10px; position:relative; }
+  .stat .bar i { position:absolute; left:0; top:0; bottom:0; background:linear-gradient(90deg,#c9a227,#d98e32,#cf6b29); }
+  .cardrow { display:flex; gap:14px; }
+  .task { flex:1.5; background:#201d1b; border:1px solid #332e2b; padding:16px 18px; position:relative; }
+  .task .heat { position:absolute; left:0; top:0; bottom:0; width:3px; background:linear-gradient(180deg,#e6c34a,#c9a227 40%,#d98e32 75%,#cf6b29); }
+  .task h4 { font-size:14px; font-weight:600; margin-bottom:4px; }
+  .task p { font-size:12px; line-height:1.5; color:#c9bda6; }
+  .task .meta { margin-top:10px; font-size:10px; color:#8f8674; letter-spacing:.08em; text-transform:uppercase; }
+  .task .chip { display:inline-block; margin-top:8px; font-size:10px; letter-spacing:.08em; text-transform:uppercase; color:#cf6b29; border:1px solid #cf6b29; padding:3px 8px; }
+  .side { flex:1; display:flex; flex-direction:column; gap:10px; }
+  .btn { text-align:center; padding:11px 16px; font-size:13px; font-weight:700; }
+  .btn.primary { color:#191715; background:linear-gradient(90deg,#c9a227,#d98e32); }
+  .btn.quiet { color:#f2ead9; background:#282422; border:1px solid #423c38; }
+  .input { background:#282422; border:1px solid #423c38; padding:10px 12px; font-size:12px; color:#8f8674; outline:2px solid #c9a227; outline-offset:2px; }
+  .mood { margin-top:36px; background:#121110; border:1px solid #332e2b; padding:30px; }
+  .mood .big { font-family:Georgia,serif; font-size:38px; color:#f2ead9; }
+  .mood .big i { background:linear-gradient(90deg,#e6c34a,#d98e32,#cf6b29); -webkit-background-clip:text; background-clip:text; color:transparent; font-style:italic; }
+  .cap { font-size:12px; color:#c9bda6; margin-top:8px; }
+  .rule { margin-top:26px; font-size:12px; color:#8f8674; line-height:1.6; border-top:1px solid #332e2b; padding-top:14px; }
+</style>
+</head>
+<body>
+<div class="canvas">
+  <div class="tag">KSK design system · gold study on R-1 warm ground · 2026-08-13</div>
+  <h1>v2b — ember permission</h1>
+  <div class="sub">Thesis: the seam stays the identity, but the campfire is allowed to burn — <b>exactly one filled element per surface</b>: the action that matters now. Heat (amber → ember) is a temperature scale for live and urgent states. Everything else obeys seam discipline.</div>
+
+  <h2>The law</h2>
+  <div class="lawrow">
+    <div class="law"><b>The ramp:</b> glint #e6c34a · <span class="seam">seam #c9a227 (identity, lines)</span> · <span class="ok">amber #d98e32 (the ONE fill)</span> · <span class="ok">ember #cf6b29 (urgent/live)</span>
+      <div class="ramp"><div style="background:#e6c34a">glint</div><div style="background:#c9a227">seam</div><div style="background:#d98e32">amber</div><div style="background:#cf6b29">ember</div></div>
+    </div>
+    <div class="law"><b>The one-fill rule:</b> per pane, a single filled gold element — the primary action or the selected nav item, never both competing. Heat states (ember) are earned by urgency, not decoration. Body text never gold.</div>
+  </div>
+
+  <h2>Proof — activation dashboard wearing ember permission</h2>
+  <div class="dash">
+    <div class="rail">
+      <div class="brand">Kaizen OS</div>
+      <div class="item on">Activation</div>
+      <div class="item">Projects</div>
+      <div class="item">People</div>
+      <div class="item">Briefs</div>
+    </div>
+    <div class="main">
+      <div class="head"><h3>Good morning — meds in, one glance, move.</h3><div class="live">1 urgent thread</div></div>
+      <div class="stats">
+        <div class="stat"><div class="n">3</div><div class="l">Quick wins open</div><div class="bar"><i style="width:64%"></i></div></div>
+        <div class="stat"><div class="n">Project Alpha</div><div class="l">Hyperfocus #1</div><div class="bar"><i style="width:38%"></i></div></div>
+        <div class="stat"><div class="n">2</div><div class="l">People to reach</div><div class="bar"><i style="width:80%"></i></div></div>
+      </div>
+      <div class="cardrow">
+        <div class="task">
+          <div class="heat"></div>
+          <h4>Project Alpha — next action</h4>
+          <p>Draft the outline for the pilot deck. The heat edge says this one is burning; the chip says why. Fill stays reserved for the button.</p>
+          <div class="meta">Jane Doe · due today</div>
+          <div class="chip">Ember · due in 3h</div>
+        </div>
+        <div class="side">
+          <div class="btn primary">Start focus block</div>
+          <div class="btn quiet">Snooze to walk list</div>
+          <div class="input">Search everything… (focused)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mood">
+    <div class="big">Tend the seam. Feed the <i>fire</i>.</div>
+    <div class="cap">the loudest gold allowed — one flame per room, and it means something</div>
+  </div>
+
+  <div class="rule">CANDIDATE — gold behavior only; ground is ratified (R-1 warm charcoal). Compare against v2a (seam discipline): identical layout, one variable. NOTE: rail selection uses the fill here to show the ceiling — if ratified, pick fill-on-button OR fill-on-nav, not both. Ratifications → personal-brand/_intake/ → /project-reconcile.</div>
+</div>
+</body>
+</html>
