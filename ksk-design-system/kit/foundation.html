@@ -1,0 +1,176 @@
+<!-- @dsCard group="KSK Foundation — ratified (R-1 · R-2 · R-3)" -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>KSK Foundation — ratified token system v0.1</title>
+<style>
+  :root {
+    --ksk-char-950:#121110; --ksk-char-900:#191715; --ksk-char-850:#201d1b;
+    --ksk-char-800:#282422; --ksk-char-700:#332e2b; --ksk-char-600:#423c38; --ksk-char-500:#57504b;
+    --ksk-ink-100:#f2ead9; --ksk-ink-300:#c9bda6; --ksk-ink-500:#8f8674;
+    --ksk-glint:#e6c34a; --ksk-seam:#c9a227; --ksk-seam-dim:#8f7420; --ksk-amber:#d98e32; --ksk-ember:#cf6b29;
+    --ksk-heat:linear-gradient(90deg,#c9a227,#d98e32);
+    --ksk-heat-edge:linear-gradient(180deg,#e6c34a,#c9a227 40%,#d98e32 75%,#cf6b29);
+    --ksk-font-display:Georgia,"Palatino Linotype",serif;
+    --ksk-font-body:"Segoe UI",system-ui,Helvetica,Arial,sans-serif;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--ksk-char-900); width:1100px; font-family:var(--ksk-font-body); color:var(--ksk-ink-100); }
+  .canvas { width:1100px; padding:48px 56px 56px; }
+  .eyebrow { font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:var(--ksk-seam); }
+  h1 { font-family:var(--ksk-font-display); font-size:42px; line-height:1.15; font-weight:400; margin:10px 0 6px; }
+  h1 i { color:var(--ksk-seam); }
+  .lede { font-size:16px; line-height:1.6; color:var(--ksk-ink-300); max-width:820px; }
+  h2 { font-family:var(--ksk-font-display); font-size:26px; line-height:1.25; font-weight:400; margin:42px 0 4px; }
+  .note { font-size:13px; line-height:1.55; color:var(--ksk-ink-500); margin-bottom:16px; }
+  .note b { color:var(--ksk-ink-300); font-weight:600; }
+  .seamrule { height:2px; background:linear-gradient(90deg,var(--ksk-seam-dim),var(--ksk-seam) 45%,var(--ksk-glint) 55%,var(--ksk-seam) 65%,var(--ksk-seam-dim)); margin:14px 0 0; }
+  .scale { display:flex; border:1px solid var(--ksk-char-700); }
+  .step { flex:1; height:104px; padding:9px; display:flex; flex-direction:column; justify-content:flex-end; }
+  .step .t { font-size:10px; color:var(--ksk-ink-300); letter-spacing:.04em; }
+  .step .h { font-size:11px; font-weight:600; }
+  .cols { display:flex; gap:22px; }
+  .col { flex:1; background:var(--ksk-char-850); border:1px solid var(--ksk-char-700); padding:18px; }
+  .col h3 { font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--ksk-seam); margin-bottom:12px; }
+  .swatchrow { display:flex; height:44px; }
+  .swatchrow div { flex:1; display:flex; align-items:center; justify-content:center; font-size:9px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--ksk-char-900); }
+  .inkline { font-size:14px; margin-top:6px; }
+  .typerow { display:flex; align-items:baseline; gap:18px; border-bottom:1px solid var(--ksk-char-700); padding:12px 0; }
+  .typerow .tok { font-size:11px; color:var(--ksk-ink-500); width:150px; flex:none; letter-spacing:.06em; }
+  .typerow .sample { flex:1; color:var(--ksk-ink-100); }
+  .d-xl { font-family:var(--ksk-font-display); font-size:42px; line-height:1.15; }
+  .d-l { font-family:var(--ksk-font-display); font-size:34px; line-height:1.2; }
+  .d-m { font-family:var(--ksk-font-display); font-size:26px; line-height:1.25; }
+  .t-title { font-size:20px; font-weight:600; }
+  .t-body { font-size:14px; line-height:1.6; color:var(--ksk-ink-300); }
+  .t-meta { font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--ksk-ink-500); }
+  .comps { display:flex; gap:16px; align-items:flex-start; }
+  .card { flex:1.3; background:var(--ksk-char-850); border:1px solid var(--ksk-char-700); padding:16px 18px; position:relative; }
+  .card .heat { position:absolute; left:0; top:0; bottom:0; width:3px; background:var(--ksk-heat-edge); }
+  .card h4 { font-size:14px; font-weight:600; margin-bottom:5px; }
+  .card p { font-size:13px; line-height:1.55; color:var(--ksk-ink-300); }
+  .chip { display:inline-block; margin-top:10px; font-size:10px; letter-spacing:.08em; text-transform:uppercase; color:var(--ksk-ember); border:1px solid var(--ksk-ember); padding:3px 8px; }
+  .stack { flex:1; display:flex; flex-direction:column; gap:10px; }
+  .btn { text-align:center; padding:11px 16px; font-size:13px; }
+  .btn.primary { background:var(--ksk-heat); color:var(--ksk-char-900); font-weight:700; }
+  .btn.quiet { background:var(--ksk-char-800); border:1px solid var(--ksk-char-600); color:var(--ksk-ink-100); font-weight:600; }
+  .input { background:var(--ksk-char-800); border:1px solid var(--ksk-char-600); padding:10px 12px; font-size:12px; color:var(--ksk-ink-500); outline:2px solid var(--ksk-seam); outline-offset:2px; }
+  .navdemo { flex:.8; background:#171411; border:1px solid var(--ksk-char-700); padding:12px 0; }
+  .navdemo div { padding:9px 16px; font-size:13px; color:var(--ksk-ink-500); }
+  .navdemo .on { color:var(--ksk-ink-100); background:var(--ksk-char-850); border-left:2px solid var(--ksk-seam); padding-left:14px; }
+  .stat { flex:1; background:var(--ksk-char-850); border:1px solid var(--ksk-char-700); padding:14px 16px; }
+  .stat .n { font-size:24px; font-weight:600; }
+  .stat .l { font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--ksk-ink-500); margin-top:2px; }
+  .stat .bar { height:4px; background:var(--ksk-char-700); margin-top:10px; position:relative; }
+  .stat .bar i { position:absolute; inset:0 auto 0 0; background:var(--ksk-heat); }
+  .laws { background:var(--ksk-char-950); border:1px solid var(--ksk-char-700); padding:26px 28px; margin-top:42px; }
+  .laws ol { margin:12px 0 0 20px; }
+  .laws li { font-size:13px; line-height:1.75; color:var(--ksk-ink-300); }
+  .laws li b { color:var(--ksk-ink-100); }
+  .laws .gold { color:var(--ksk-seam); }
+  .mood { margin-top:34px; background:var(--ksk-char-950); border:1px solid var(--ksk-char-700); padding:34px 30px; }
+  .mood .big { font-family:var(--ksk-font-display); font-size:38px; line-height:1.2; }
+  .mood .big i { color:var(--ksk-seam); }
+  .prov { margin-top:26px; border-top:1px solid var(--ksk-char-700); padding-top:14px; font-size:12px; line-height:1.65; color:var(--ksk-ink-500); }
+  .prov b { color:var(--ksk-ink-300); }
+</style>
+</head>
+<body>
+<div class="canvas">
+  <div class="eyebrow">KSK design system · foundation v0.1 · 2026-08-13</div>
+  <h1>Gold where it was <i>broken</i>. Dark where it is <i>curious</i>.</h1>
+  <p class="lede">The ratified foundation of the Kaizen Sirius Kintsugi system: warm charcoal ground (R-1), ember-permission gold (R-2), carved serif register (R-3). This page is the visual reference; <b>TOKENS.md is the contract</b>.</p>
+  <div class="seamrule"></div>
+
+  <h2>Ground &amp; ink</h2>
+  <div class="note">Warm brown-black charcoal — <b>R-1 ratified</b> (undertone canon; step count provisional). Dark-first, dark-only: there is no light mode.</div>
+  <div class="scale">
+    <div class="step" style="background:var(--ksk-char-950)"><span class="t">char-950 · void</span><span class="h">#121110</span></div>
+    <div class="step" style="background:var(--ksk-char-900)"><span class="t">char-900 · ground</span><span class="h">#191715</span></div>
+    <div class="step" style="background:var(--ksk-char-850)"><span class="t">char-850 · pane</span><span class="h">#201d1b</span></div>
+    <div class="step" style="background:var(--ksk-char-800)"><span class="t">char-800 · raised</span><span class="h">#282422</span></div>
+    <div class="step" style="background:var(--ksk-char-700)"><span class="t">char-700 · border</span><span class="h">#332e2b</span></div>
+    <div class="step" style="background:var(--ksk-char-600)"><span class="t">char-600 · strong</span><span class="h">#423c38</span></div>
+    <div class="step" style="background:var(--ksk-char-500)"><span class="t">char-500 · disabled</span><span class="h">#57504b</span></div>
+  </div>
+
+  <div class="cols" style="margin-top:22px">
+    <div class="col">
+      <h3>Gold — the ember ramp (R-2)</h3>
+      <div class="swatchrow">
+        <div style="background:var(--ksk-glint)">glint</div>
+        <div style="background:var(--ksk-seam)">seam</div>
+        <div style="background:var(--ksk-amber)">amber</div>
+        <div style="background:var(--ksk-ember)">ember</div>
+      </div>
+      <div class="note" style="margin:10px 0 0">seam <b>#c9a227</b> = identity, lines only · amber <b>#d98e32</b> = the one fill · ember <b>#cf6b29</b> = earned urgency. <i>These swatches are a palette display, not a UI pane — the one-fill rule governs interfaces.</i></div>
+    </div>
+    <div class="col">
+      <h3>Ink ramp</h3>
+      <div class="inkline" style="color:var(--ksk-ink-100)">ink-100 #f2ead9 — primary</div>
+      <div class="inkline" style="color:var(--ksk-ink-300)">ink-300 #c9bda6 — secondary / prose</div>
+      <div class="inkline" style="color:var(--ksk-ink-500)">ink-500 #8f8674 — muted / meta</div>
+      <div class="note" style="margin:12px 0 0">Because gold is rationed, <b>weight and spacing do the emphasis work</b>.</div>
+    </div>
+  </div>
+
+  <h2>Type — the storyteller register</h2>
+  <div class="note"><b>R-3 ratified:</b> literary serif carries display; a quiet grotesk carries body and all UI chrome. Serif never below 20px, never in chrome. Mono is out of the system. <b>Faces shown are fallbacks</b> — trial Fraunces / Cormorant Garamond next.</div>
+  <div class="typerow"><span class="tok">display-xl · 42/1.15</span><span class="sample d-xl">The lighthouse keeps its log</span></div>
+  <div class="typerow"><span class="tok">display-l · 34/1.2</span><span class="sample d-l">Repaired, and saying so</span></div>
+  <div class="typerow"><span class="tok">display-m · 26/1.25</span><span class="sample d-m">Section heading &amp; pull-quotes</span></div>
+  <div class="typerow"><span class="tok">title · 20/1.3 · 600</span><span class="sample t-title">Serif's floor — the boundary size</span></div>
+  <div class="typerow"><span class="tok">body · 14/1.6</span><span class="sample t-body">Grotesk carries every working surface: cards, tables, forms, navigation. It is the voice of the tooling, and it never competes with the serif.</span></div>
+  <div class="typerow"><span class="tok">meta · 11 · tracked caps</span><span class="sample t-meta">Jane Doe · updated today</span></div>
+
+  <h2>Components — the laws applied</h2>
+  <div class="note">One pane, <b>exactly one filled gold element</b>: the primary action. The burning card earns a heat edge and an ember chip; nav selection wears a seam edge, not a fill.</div>
+  <div class="comps">
+    <div class="navdemo">
+      <div class="on">Activation</div>
+      <div>Projects</div>
+      <div>People</div>
+      <div>Briefs</div>
+    </div>
+    <div class="card">
+      <div class="heat"></div>
+      <h4>Project Alpha — next action</h4>
+      <p>Draft the outline for the pilot deck. The heat edge marks what is burning; the chip says why.</p>
+      <div class="chip">Ember · due in 3h</div>
+    </div>
+    <div class="stack">
+      <div class="btn primary">Start focus block</div>
+      <div class="btn quiet">Snooze to walk list</div>
+      <div class="input">Search everything… (focused)</div>
+    </div>
+    <div class="stat">
+      <div class="n">3</div>
+      <div class="l">Quick wins open</div>
+      <div class="bar"><i style="width:64%"></i></div>
+    </div>
+  </div>
+
+  <div class="laws">
+    <div class="eyebrow">The laws — enforceable, countable</div>
+    <ol>
+      <li><b class="gold">One fill per pane.</b> Count filled gold elements on any surface: the answer is always 0 or 1.</li>
+      <li><b>Seam is a line, never a fill.</b> Identity lives in hairlines, seams, focus rings, edges.</li>
+      <li><b>Ember is earned.</b> Heat marks genuine urgency or live activity — never decoration.</li>
+      <li><b>Body text is never gold.</b> Gold text only as uppercase micro-labels or emphasis inside display copy.</li>
+      <li><b>Serif never below 20px, never in UI chrome.</b> No serif buttons, labels, cells, meta, or forms.</li>
+      <li><b>Dark-first, dark-only.</b> There is no light mode.</li>
+    </ol>
+  </div>
+
+  <div class="mood">
+    <div class="big">Tend the seam. Feed the <i>fire</i>.</div>
+  </div>
+
+  <div class="prov">
+    <b>Provenance:</b> R-1 warm charcoal ground · R-2 ember permission · R-3 carved serif register — all logged in <b>_intake/</b> and pending <b>/project-reconcile</b> into canon/VISUAL.md.
+    <b>Provisional (not ratified):</b> charcoal step count · type scale sizes · spacing scale · sharp radius · the specific faces · whether the one fill defaults to the action button or the nav selection.
+  </div>
+</div>
+</body>
+</html>
