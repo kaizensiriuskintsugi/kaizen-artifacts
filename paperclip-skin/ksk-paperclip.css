@@ -1,0 +1,174 @@
+/* KSK Paperclip skin — Kintsugi Ember for the local Paperclip web UI (v1.0, 2026-11-11)
+   Tokens copied from shared/css/ksk-dashboard.css (the source of truth). If the house theme
+   changes there, change the values in the TOKENS block below to match; never restyle here.
+
+   Light vs dark: FORCED DARK. Kintsugi Ember is a dark-only theme (the source sets
+   color-scheme:dark and has no light variant), so `:root` and `.dark` get the same Ember
+   values. apply.py also adds `dark` to <html> on load so Paperclip's `dark:` utilities match.
+   If Paperclip's toggle is set to light, the tokens stay Ember; nothing goes white.
+
+   House rules carried over:
+   - Seam gold is a line, never a fill: focus rings, the sidebar edge, the header seam.
+   - Amber is the one primary-action fill (--primary). Everything else is outline or neutral.
+   - Ember only for destructive / blocked / error.
+   - Inter for all UI text. Fraunces only at 20px and up (page titles, big figures).
+   - Status icons use --kd-good / warn / crit / neutral. Paperclip's icons differ in shape too,
+     so colour never carries status alone. */
+
+@font-face { font-family:"KSK Fraunces"; src:url("fonts/fraunces-var.woff2") format("woff2"); font-weight:100 900; font-display:swap; }
+@font-face { font-family:"KSK Inter"; src:url("fonts/inter-var.woff2") format("woff2"); font-weight:100 900; font-display:swap; }
+
+/* ---------- TOKENS (copy of the house values; do not invent new ones) ---------- */
+:root, :root.dark, .dark {
+  --ksk-char-950:#121110; --ksk-char-900:#191715; --ksk-char-850:#201d1b; --ksk-char-800:#282422;
+  --ksk-char-700:#332e2b; --ksk-char-600:#423c38; --ksk-char-500:#57504b;
+  --ksk-ink-100:#f2ead9; --ksk-ink-300:#c9bda6; --ksk-ink-500:#8f8674;
+  --ksk-glint:#e6c34a; --ksk-seam:#c9a227; --ksk-seam-dim:#8f7420; --ksk-amber:#d98e32; --ksk-ember:#cf6b29;
+
+  --kd-bg:var(--ksk-char-950); --kd-surface:var(--ksk-char-900); --kd-surface-2:var(--ksk-char-850);
+  --kd-raise:var(--ksk-char-800); --kd-border:var(--ksk-char-700); --kd-border-strong:var(--ksk-char-600);
+  --kd-ink:var(--ksk-ink-100); --kd-ink-2:var(--ksk-ink-300); --kd-ink-3:var(--ksk-ink-500);
+  --kd-seam:var(--ksk-seam); --kd-primary:var(--ksk-amber); --kd-primary-ink:var(--ksk-char-950); --kd-urgent:var(--ksk-ember);
+  --kd-seam-edge:linear-gradient(90deg,transparent,var(--ksk-seam-dim) 12%,var(--ksk-seam) 40%,var(--ksk-glint) 50%,var(--ksk-seam) 60%,var(--ksk-seam-dim) 88%,transparent);
+  --kd-c1:#b38c15; --kd-c2:#009988; --kd-c3:#8375c6; --kd-c4:#6b9c4f; --kd-c5:#3e8ec1; --kd-c6:#bf5884;
+  --kd-good:#5fae7a; --kd-warn:#d9a03a; --kd-crit:var(--ksk-ember); --kd-neutral:var(--ksk-ink-500);
+
+  /* ---------- Paperclip (shadcn) variables -> Ember ---------- */
+  color-scheme:dark;
+  --radius:.625rem;                         /* ~10px, the house --kd-radius */
+
+  --background:var(--kd-bg);
+  --foreground:var(--kd-ink);
+  --card:var(--kd-surface);
+  --card-foreground:var(--kd-ink);
+  --popover:var(--kd-raise);
+  --popover-foreground:var(--kd-ink);
+
+  --primary:var(--kd-primary);              /* the one amber fill: primary buttons */
+  --primary-foreground:var(--kd-primary-ink);
+  --secondary:var(--kd-surface-2);          /* neutral, never gold */
+  --secondary-foreground:var(--kd-ink);
+  --muted:var(--kd-surface-2);
+  --muted-foreground:var(--kd-ink-3);
+  --accent:var(--kd-raise);                 /* hover / selected rows: neutral raise, not a brand fill */
+  --accent-foreground:var(--kd-ink);
+  --destructive:var(--kd-urgent);           /* ember is earned */
+  --destructive-foreground:var(--kd-ink);
+
+  --border:var(--kd-border);
+  --input:var(--kd-border-strong);
+  --ring:var(--kd-seam);                    /* focus ring = seam line */
+
+  --scrollbar-thumb:var(--kd-border-strong);
+  --scrollbar-thumb-hover:var(--ksk-char-500);
+
+  --chart-1:var(--kd-c1); --chart-2:var(--kd-c2); --chart-3:var(--kd-c3); --chart-4:var(--kd-c4); --chart-5:var(--kd-c5);
+
+  --sidebar:var(--kd-surface);
+  --sidebar-foreground:var(--kd-ink-2);
+  --sidebar-primary:var(--kd-primary);
+  --sidebar-primary-foreground:var(--kd-primary-ink);
+  --sidebar-accent:var(--kd-raise);
+  --sidebar-accent-foreground:var(--kd-ink);
+  --sidebar-border:var(--kd-border);
+  --sidebar-ring:var(--kd-seam);
+
+  --side-panel-bg:var(--kd-surface);
+  --side-panel-fg:var(--kd-ink);
+  --streamlined-task-detail-bg:var(--kd-bg);
+  --bubble-agent:var(--kd-surface-2);
+
+  /* Search-match chips: series hues as hairline + text, faint tint only */
+  --chip-match-title-bg:color-mix(in srgb,var(--kd-c5) 12%,transparent);
+  --chip-match-title-fg:color-mix(in srgb,var(--kd-c5) 55%,var(--kd-ink));
+  --chip-match-title-border:color-mix(in srgb,var(--kd-c5) 45%,var(--kd-border));
+  --chip-match-comment-bg:color-mix(in srgb,var(--kd-c4) 12%,transparent);
+  --chip-match-comment-fg:color-mix(in srgb,var(--kd-c4) 55%,var(--kd-ink));
+  --chip-match-comment-border:color-mix(in srgb,var(--kd-c4) 45%,var(--kd-border));
+  --chip-match-document-bg:color-mix(in srgb,var(--kd-c3) 12%,transparent);
+  --chip-match-document-fg:color-mix(in srgb,var(--kd-c3) 55%,var(--kd-ink));
+  --chip-match-document-border:color-mix(in srgb,var(--kd-c3) 45%,var(--kd-border));
+  --chip-match-identifier-bg:var(--muted);
+  --chip-match-identifier-fg:var(--muted-foreground);
+  --chip-match-identifier-border:var(--border);
+
+  /* Doc annotation highlight: verdigris, so gold stays a line */
+  --paperclip-doc-annotation-highlight-source:var(--kd-c2);
+
+  /* Dashboard "run" accent: verdigris instead of SaaS blue */
+  --dashboard-run-accent:var(--kd-c2);
+
+  /* Status — task icons (good / warn / crit / neutral) */
+  --status-task-backlog:var(--kd-neutral);
+  --status-task-todo:var(--kd-ink-2);
+  --status-task-in_progress:var(--kd-warn);
+  --status-task-in_review:var(--kd-warn);
+  --status-task-done:var(--kd-good);
+  --status-task-blocked:var(--kd-crit);
+  --status-task-cancelled:var(--kd-neutral);
+  --status-task-icon-backlog:var(--kd-neutral);
+  --status-task-icon-todo:var(--kd-ink-2);
+  --status-task-icon-in_progress:var(--kd-warn);
+  --status-task-icon-in_queue:var(--kd-warn);
+  --status-task-icon-in_review:var(--kd-warn);
+  --status-task-icon-done:var(--kd-good);
+  --status-task-icon-blocked:var(--kd-crit);
+  --status-task-icon-cancelled:var(--kd-neutral);
+  /* Status — agents */
+  --status-agent-idle:var(--kd-neutral);
+  --status-agent-running:var(--kd-good);
+  --status-agent-paused:var(--kd-warn);
+  --status-agent-error:var(--kd-crit);
+
+  /* Your own chat bubble: neutral raise + hairline (rule below), not SaaS blue */
+  --liveness-blue:var(--kd-raise);
+
+  /* Tailwind's saturated blues and purples, used ad hoc for chips and links, pulled to the
+     house steel (c5) and dusk (c3) so no SaaS blue/purple survives. */
+  --color-blue-400:color-mix(in srgb,var(--kd-c5) 80%,var(--kd-ink));
+  --color-blue-500:var(--kd-c5);
+  --color-blue-600:var(--kd-c5);
+  --color-blue-700:color-mix(in srgb,var(--kd-c5) 80%,var(--kd-bg));
+  --color-indigo-400:color-mix(in srgb,var(--kd-c3) 80%,var(--kd-ink));
+  --color-indigo-500:var(--kd-c3); --color-indigo-600:var(--kd-c3);
+  --color-violet-400:color-mix(in srgb,var(--kd-c3) 80%,var(--kd-ink));
+  --color-violet-500:var(--kd-c3); --color-violet-600:var(--kd-c3);
+  --color-purple-400:color-mix(in srgb,var(--kd-c3) 80%,var(--kd-ink));
+  --color-purple-500:var(--kd-c3); --color-purple-600:var(--kd-c3);
+
+  /* Fonts: Inter for UI; mono untouched */
+  --font-sans:"KSK Inter","InterVariable","Inter","Segoe UI",system-ui,sans-serif;
+  --font-body:var(--font-sans);
+  --default-font-family:var(--font-sans);
+}
+
+/* ---------- Base ---------- */
+html, body { background:var(--kd-bg); color:var(--kd-ink); }
+body { font-family:var(--font-sans); font-feature-settings:"tnum" 1,"cv11" 1; -webkit-font-smoothing:antialiased; }
+::selection { background:color-mix(in srgb,var(--kd-c2) 35%,transparent); color:var(--kd-ink); }
+:focus-visible { outline-color:var(--kd-seam); }
+a { text-decoration-color:var(--kd-seam); }
+
+/* Fraunces only for large type (>= 20px): Tailwind text-xl (20px) and up. Never in chrome below that. */
+:is(.text-xl,.text-2xl,.text-3xl,.text-4xl,.text-5xl,.text-6xl) {
+  font-family:"KSK Fraunces","Fraunces",Georgia,serif;
+  font-variation-settings:"SOFT" 0,"WONK" 1,"opsz" 72;
+  font-weight:400;
+  letter-spacing:-.01em;
+}
+
+/* Seam lines: the sidebar's inner edge and the top header rule are the identity hairlines. */
+:is(aside,[data-sidebar="sidebar"],nav[aria-label]) { border-color:var(--kd-border); }
+
+/* No shadows on cards (house rule); popovers keep a soft one for depth. */
+:is(.shadow-sm,.shadow,.shadow-md):not([role="dialog"]):not([role="menu"]):not([data-radix-popper-content-wrapper] *) { box-shadow:none; }
+
+/* Your chat bubble: raise surface, hairline, ivory ink. */
+.bg-\(--liveness-blue\) { color:var(--kd-ink) !important; box-shadow:inset 0 0 0 1px var(--kd-border-strong); }
+
+/* Count badges (e.g. Inbox unread) are not actions: outline amber, so the only amber fill is a button. */
+span.bg-primary { background-color:transparent; color:var(--kd-primary); box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--kd-primary) 70%,transparent); }
+
+/* Destructive buttons are outline ember, so amber stays the only fill. */
+.bg-destructive { background-color:transparent; color:var(--kd-urgent); box-shadow:inset 0 0 0 1px var(--kd-urgent); }
+.bg-destructive:hover { background-color:color-mix(in srgb,var(--kd-urgent) 12%,transparent); }
